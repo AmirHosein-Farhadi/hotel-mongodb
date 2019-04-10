@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface HotelRepository  extends MongoRepository<Hotel,String> {
+public interface HotelRepository extends MongoRepository<Hotel,String> {
 
     Optional<Hotel> findById(String id);
 

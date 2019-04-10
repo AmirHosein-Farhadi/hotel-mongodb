@@ -1,5 +1,6 @@
 package com.example.hotelproject;
 
+import com.mongodb.MongoClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,13 +1,19 @@
 package com.example.hotelproject.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@Getter
+@NoArgsConstructor
 @Document(collection = "Hotels")
 public class Hotel {
     @Id
@@ -18,12 +24,9 @@ public class Hotel {
     @Indexed(direction = IndexDirection.ASCENDING)
     private int pricePerNight;
 
+    @DBRef
     private Address address;
     private List<Review> reviews;
-
-    protected Hotel() {
-        this.reviews = new ArrayList<>();
-    }
 
     public Hotel(String name, int pricePerNight, Address address, List<Review> reviews) {
         this.name = name;
